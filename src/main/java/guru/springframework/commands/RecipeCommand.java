@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
 public class RecipeCommand {
     private String id;
 
-    @NotNull
+    @NotBlank
     @Size(min = 3, max = 255)
     private String description;
 
@@ -30,7 +30,7 @@ public class RecipeCommand {
     @Max(999)
     private Integer prepTime;
 
-    @Min(1)
+    @Min(0)
     @Max(999)
     private Integer cookTime;
 
@@ -42,7 +42,7 @@ public class RecipeCommand {
     @URL
     private String url;
 
-    @NotNull
+    @NotBlank
     private String directions;
 
     private List<IngredientCommand> ingredients = new ArrayList<>();

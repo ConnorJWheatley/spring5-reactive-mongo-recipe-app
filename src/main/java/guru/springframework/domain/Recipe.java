@@ -18,7 +18,6 @@ public class Recipe {
 
     @Id
     private String id;
-
     private String description;
     private Integer prepTime;
     private Integer cookTime;
